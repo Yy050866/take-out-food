@@ -6,8 +6,25 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex'
 import FooterGuide from './components/FooterGuide/FooterGuide'
+/*import {reqFootTypes} from './api/index'*/
 export default {
+/*    async mounted(){
+      const result = await reqFootTypes();
+      console.log(result);
+    },*/
+//一种获取的方法
+ /*   mounted(){
+      this.$store.dispatch('getAddress')
+    },*/
+ //另一种获取的方法
+    mounted(){
+      this.getAddress()
+    },
+    methods:{
+      ...mapActions(['getAddress'])
+    },
     components:{
       FooterGuide
     }
